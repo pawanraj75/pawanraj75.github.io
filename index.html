@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Pawan Kumar — B.Tech CSE student, developer and creator. Explore projects, skills, certificates and learning journey." />
+  <meta name="theme-color" content="#1264e8" />
+  <title>Pawan Kumar | B.Tech CSE Student & Developer</title>
+  <style>
+    :root{
+      --blue:#1264e8; --blue2:#0b4fc4; --ink:#10213d; --muted:#61708a;
+      --bg:#f6f9ff; --card:#fff; --line:#e5ebf5; --soft:#eef5ff;
+      --shadow:0 16px 45px rgba(24,66,130,.10); --radius:22px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1120px;margin:auto;padding:0 20px}
+    nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+    .navin{height:70px;display:flex;align-items:center;justify-content:space-between}
+    .brand{font-weight:900;font-size:20px;letter-spacing:-.4px}
+    .brand span{color:var(--blue)}
+    .links{display:flex;gap:22px;font-size:14px;font-weight:700;color:#40516d}
+    .links a:hover{color:var(--blue)}
+    .menu{display:none;border:0;background:var(--soft);padding:9px 12px;border-radius:12px;font-size:20px}
+    .hero{padding:90px 0 65px;background:
+      radial-gradient(circle at 85% 15%,#dbeaff 0,transparent 30%),
+      linear-gradient(180deg,#fff 0%,#f6f9ff 100%)}
+    .heroGrid{display:grid;grid-template-columns:1.3fr .7fr;gap:45px;align-items:center}
+    .pill{display:inline-flex;gap:8px;align-items:center;background:var(--soft);color:var(--blue);padding:8px 13px;border-radius:999px;font-weight:800;font-size:13px;margin-bottom:18px}
+    h1{font-size:clamp(42px,7vw,72px);line-height:1.02;letter-spacing:-3px;margin-bottom:20px}
+    h1 span{color:var(--blue)}
+    .lead{font-size:19px;color:var(--muted);max-width:720px}
+    .buttons{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:13px;font-weight:800;border:1px solid var(--line);background:#fff}
+    .btn.primary{background:var(--blue);color:#fff;border-color:var(--blue)}
+    .btn:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(18,100,232,.15)}
+    .profileCard{background:#fff;border:1px solid var(--line);border-radius:28px;padding:30px;box-shadow:var(--shadow);text-align:center}
+    .avatar{width:125px;height:125px;margin:0 auto 18px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--blue),#62a0ff);color:#fff;font-size:43px;font-weight:900;box-shadow:0 15px 35px rgba(18,100,232,.25)}
+    .profileCard h2{font-size:25px}
+    .profileCard p{color:var(--muted);margin-top:4px}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:22px}
+    .stat{background:var(--soft);border-radius:14px;padding:12px 5px}.stat b{display:block;font-size:20px;color:var(--blue)}.stat small{color:var(--muted)}
+    section{padding:75px 0}
+    .sectionHead{margin-bottom:30px}
+    .eyebrow{color:var(--blue);font-weight:900;text-transform:uppercase;font-size:12px;letter-spacing:1.4px}
+    h2.sectionTitle{font-size:36px;letter-spacing:-1.2px;margin-top:5px}
+    .sectionText{color:var(--muted);max-width:760px}
+    .about{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:27px;box-shadow:0 8px 25px rgba(24,66,130,.05)}
+    .card h3{font-size:21px;margin-bottom:10px}
+    .card p{color:var(--muted)}
+    .skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .tag{padding:9px 13px;background:var(--soft);color:#244b86;border-radius:999px;font-weight:800;font-size:13px}
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+    .projectTop{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+    .icon{width:52px;height:52px;display:grid;place-items:center;border-radius:15px;background:var(--soft);font-size:25px}
+    .badge{font-size:11px;font-weight:900;color:#1d6c37;background:#eaf8ef;padding:6px 9px;border-radius:999px}
+    .project p{margin:14px 0;color:var(--muted)}
+    .project ul{padding-left:19px;color:#52627a;margin-bottom:18px}
+    .project li{margin:5px 0}
+    .certs{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .cert{position:relative}
+    .cert .date{font-size:12px;font-weight:900;color:var(--blue);margin-bottom:8px}
+    .cert h3{font-size:18px}
+    .cert p{margin-top:8px}
+    .timeline{display:grid;gap:15px}
+    .edu{border-left:4px solid var(--blue);padding:18px 20px;background:#fff;border-radius:0 18px 18px 0;border-top:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .edu b{font-size:18px}.edu span{display:block;color:var(--muted);margin-top:4px}
+    .contact{background:linear-gradient(135deg,#0c55c9,#1264e8);color:#fff;border-radius:30px;padding:42px}
+    .contact p{color:#dceaff;max-width:720px;margin-top:10px}
+    .contactBtns{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+    .contact .btn{background:#fff;border-color:#fff;color:#0b4fc4}
+    .contact .btn.alt{background:transparent;color:#fff;border-color:rgba(255,255,255,.35)}
+    footer{padding:28px 0;color:var(--muted);font-size:13px;text-align:center}
+    @media(max-width:800px){
+      .links{display:none}.menu{display:block}
+      .heroGrid,.about,.projects,.certs{grid-template-columns:1fr}
+      .hero{padding-top:60px}.profileCard{max-width:430px;margin:auto}
+      h1{letter-spacing:-2px}
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="wrap navin">
+      <a class="brand" href="#home">Pawan<span>.</span></a>
+      <div class="links">
+        <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a>
+        <a href="#certificates">Certificates</a><a href="#education">Education</a><a href="#contact">Contact</a>
+      </div>
+      <button class="menu" onclick="alert('Use the sections below to explore the profile.')">☰</button>
+    </div>
+  </nav>
+
+  <header class="hero" id="home">
+    <div class="wrap heroGrid">
+      <div>
+        <div class="pill">💻 B.Tech CSE Student • Builder • Learner</div>
+        <h1>Hi, I'm <span>Pawan Kumar</span>.</h1>
+        <p class="lead">
+          A first-year B.Tech Computer Science student who enjoys programming, web development,
+          creating useful study resources, and building projects from ideas into working websites.
+        </p>
+        <div class="buttons">
+          <a class="btn primary" href="#projects">🚀 View My Projects</a>
+          <a class="btn" href="mailto:pawanraj7522897404@gmail.com">✉️ Contact Me</a>
+          <a class="btn" href="https://github.com/pawanraj75" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+      </div>
+      <div class="profileCard">
+        <div class="avatar">PK</div>
+        <h2>Pawan Kumar</h2>
+        <p>Computer Science & Engineering</p>
+        <div class="stats">
+          <div class="stat"><b>2+</b><small>Projects</small></div>
+          <div class="stat"><b>2</b><small>Certificates</small></div>
+          <div class="stat"><b>1st</b><small>Year</small></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="about">
+      <div class="wrap">
+        <div class="sectionHead">
+          <div class="eyebrow">About Me</div>
+          <h2 class="sectionTitle">Learning by building.</h2>
+          <p class="sectionText">A simple profile for recruiters, collaborators and anyone who wants to see what I am learning and creating.</p>
+        </div>
+        <div class="about">
+          <div class="card">
+            <h3>👨‍💻 Who I Am</h3>
+            <p>
+              I am a B.Tech CSE student at Rajkiya Engineering College, Mainpuri.
+              My current focus is strengthening programming fundamentals, improving problem-solving,
+              and turning practical ideas into websites and small software projects.
+            </p>
+          </div>
+          <div class="card" id="skills">
+            <h3>🧰 Skills & Tools</h3>
+            <p>Technologies and creative tools I have worked with or am actively learning:</p>
+            <div class="skills">
+              <span class="tag">C Programming</span><span class="tag">Python</span>
+              <span class="tag">HTML</span><span class="tag">CSS</span>
+              <span class="tag">JavaScript</span><span class="tag">Git</span>
+              <span class="tag">GitHub</span><span class="tag">Canva</span>
+              <span class="tag">Video Editing</span><span class="tag">Typing</span>
+              <span class="tag">Web Development</span><span class="tag">Problem Solving</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="wrap">
+        <div class="sectionHead">
+          <div class="eyebrow">Featured Work</div>
+          <h2 class="sectionTitle">Projects I've built</h2>
+          <p class="sectionText">Two projects that show my interest in both technology and student-focused products.</p>
+        </div>
+        <div class="projects">
+          <article class="card project">
+            <div class="projectTop">
+              <div class="icon">🎮</div><span class="badge">LIVE PROJECT</span>
+            </div>
+            <h3>Pawan Games</h3>
+            <p>A free-to-play gaming hub built step by step with a modern mobile/desktop interface.</p>
+            <ul>
+              <li>Chess and Tic-Tac-Toe experiences</li>
+              <li>Ludo Arena concept with rooms and chat</li>
+              <li>Player profiles, XP, achievements and leaderboard concepts</li>
+              <li>Designed for future multiplayer expansion</li>
+            </ul>
+            <div class="buttons">
+              <a class="btn primary" href="https://pawanraj75.github.io/Pawan-Games/" target="_blank" rel="noopener">🎮 Live Demo</a>
+              <a class="btn" href="https://github.com/pawanraj75" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </article>
+
+          <article class="card project">
+            <div class="projectTop">
+              <div class="icon">📚</div><span class="badge">LIVE PROJECT</span>
+            </div>
+            <h3>Study & Enjoy</h3>
+            <p>A student-focused study platform created to make B.Tech first-year preparation more organized and accessible.</p>
+            <ul>
+              <li>Subject-wise study sections and notes</li>
+              <li>PYQ and exam-revision focused resources</li>
+              <li>Quick tests and score checking</li>
+              <li>Study AI concept and voice-study interface</li>
+            </ul>
+            <div class="buttons">
+              <a class="btn primary" href="https://pawanraj75.github.io/Study-and-enjoy-/" target="_blank" rel="noopener">📖 Live Website</a>
+              <a class="btn" href="https://github.com/pawanraj75/Study-and-enjoy-" target="_blank" rel="noopener">Source Code</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="certificates">
+      <div class="wrap">
+        <div class="sectionHead">
+          <div class="eyebrow">Achievements</div>
+          <h2 class="sectionTitle">Certificates & Participation</h2>
+          <p class="sectionText">A growing collection of learning and participation achievements. More certificates can be added later.</p>
+        </div>
+        <div class="certs">
+          <article class="card cert">
+            <div class="date">19 SEPTEMBER 2026</div>
+            <h3>☁️ AWS Builder Center — Day 01</h3>
+            <p><b>Introduction To AWS Tools</b></p>
+            <p>Organized at LDAH Rajkiya Engineering College Mainpuri. The certificate records learning around foundational cloud concepts, AWS global infrastructure elements and core workflow principles.</p>
+            <p><b>Certificate ID:</b> AWS-LDAH-2026-018</p>
+          </article>
+
+          <article class="card cert">
+            <div class="date">29 SEPTEMBER 2026</div>
+            <h3>🏅 Ministry of Youth Affairs & Sports</h3>
+            <p><b>Certificate of Participation — Online Quiz on Viksit Bharat Young Leaders Dialogue (VBYLD) 2027</b></p>
+            <p>Conducted on MYBharat. The certificate recognizes participation and contribution in the online quiz.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="wrap">
+        <div class="sectionHead">
+          <div class="eyebrow">Education</div>
+          <h2 class="sectionTitle">My academic journey</h2>
+        </div>
+        <div class="timeline">
+          <div class="edu">
+            <b>🎓 B.Tech — Computer Science & Engineering</b>
+            <span>Rajkiya Engineering College, Mainpuri • 1st Year</span>
+            <span>Current focus: C Programming, Python, problem solving, web development and core B.Tech subjects.</span>
+          </div>
+          <div class="edu">
+            <b>📘 Class 12</b>
+            <span>Completed in 2025</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="contact" id="contact">
+          <div class="eyebrow" style="color:#bcd7ff">Let's Connect</div>
+          <h2 class="sectionTitle" style="color:#fff">Have an opportunity or project?</h2>
+          <p>
+            For collaboration, project discussion, learning opportunities or professional contact,
+            email me. I am continuously learning and building.
+          </p>
+          <div class="contactBtns">
+            <a class="btn" href="mailto:pawanraj7522897404@gmail.com">✉️ pawanraj7522897404@gmail.com</a>
+            <a class="btn alt" href="https://github.com/pawanraj75" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Pawan Kumar • Built with HTML & CSS • Learning, Building, Improving.
+  </footer>
+</body>
+</html>
